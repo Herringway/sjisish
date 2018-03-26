@@ -1,0 +1,9 @@
+{
+	"name": "sjis",
+	"authors": [
+		"Cameron \"Herringway\" Ross"
+	],
+	"description": "SJIS decoder and encoder",
+	"copyright": "Copyright © 2018, Cameron Ross",
+	"license": "BSL-1.0"
+}

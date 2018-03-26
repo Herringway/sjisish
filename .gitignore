@@ -1,0 +1,14 @@
+.dub
+docs.json
+__dummy.html
+docs/
+sjis.so
+sjis.dylib
+sjis.dll
+sjis.a
+sjis.lib
+sjis-test-*
+*.exe
+*.o
+*.obj
+*.lst
