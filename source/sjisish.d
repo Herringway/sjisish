@@ -1,5 +1,10 @@
-///SJIS encoding/decoding.
-module sjis;
+/++ SJIS encoding/decoding.
++
++	Authors: Cameron "Herringway" Ross
++	Copyright: Cameron "Herringway" Ross
++	License: Boost Software License 1.0
++/
+module sjisish;
 
 private immutable dchar[ushort] fromSJISTable;
 private immutable ushort[dchar] toSJISTable;
@@ -56,10 +61,13 @@ auto toUTF(T = string)(const ubyte[] input) if (isSomeString!T) {
 	assert(toUTF!wstring([0x82, 0x67, 0x82, 0x85, 0x82, 0x8c, 0x82, 0x8c,  0x82, 0x8f, 0x81, 0x44]) == "Ｈｅｌｌｏ．"w);
 }
 
+/// Holds an SJIS string.
 struct SJISString {
 	alias raw this;
+	/// Raw data.
 	immutable(ubyte)[] raw;
 
+	/// Convert string to unicode.
 	auto toUTF(T = string)() const {
 		return raw.toUTF!T;
 	}
@@ -73,7 +81,7 @@ struct SJISString {
 +	input = String to encode.
 +	skipInvalidCharacters = Whether to skip characters that don't exist in SJIS or throw an exception.
 +/
-SJISString toSJIS(T)(T input, Flag!"IgnoreInvalid" skipInvalidCharacters = Flag!"IgnoreInvalid".no) if (isSomeString!T) {
+auto toSJIS(T)(T input, Flag!"IgnoreInvalid" skipInvalidCharacters = Flag!"IgnoreInvalid".no) if (isSomeString!T) {
 	import std.exception : enforce;
 	SJISString output;
 	if (!__ctfe) {
