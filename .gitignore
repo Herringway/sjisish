@@ -2,11 +2,11 @@
 docs.json
 __dummy.html
 docs/
-sjis.so
-sjis.dylib
-sjis.dll
-sjis.a
-sjis.lib
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
 sjis-test-*
 *.exe
 *.o
