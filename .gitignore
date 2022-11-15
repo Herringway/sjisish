@@ -12,3 +12,4 @@ sjis-test-*
 *.o
 *.obj
 *.lst
+*.pdb
